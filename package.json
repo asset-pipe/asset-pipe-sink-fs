@@ -1,0 +1,33 @@
+{
+  "name": "asset-pipe-sink-fs",
+  "version": "1.0.0",
+  "author": {
+    "name": "Trygve Lie",
+    "email": "post@trygve-lie.com"
+  },
+  "description": "Sink for persisting to and reading from the local file system",
+  "main": "./lib/sink.js",
+  "repository": {
+    "type": "git",
+    "url": "git@github.com:asset-pipe/asset-pipe-sink-fs.git"
+  },
+  "keywords": [
+    "test"
+  ],
+  "contributors": [
+    {
+      "name": "Trygve Lie",
+      "email": "post@trygve-lie.com"
+    }
+  ],
+  "engines": {
+    "node" : "6.x"
+  },
+  "bugs": {
+    "url": "https://github.com/asset-pipe/asset-pipe-sink-fs/issues"
+  },
+  "licenses": ["MIT"],
+  "dependencies": {
+    "readable-stream": "2.1.4"
+  }
+}
