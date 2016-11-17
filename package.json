@@ -28,6 +28,6 @@
   },
   "licenses": ["MIT"],
   "dependencies": {
-    "readable-stream": "2.2.1"
+    "readable-stream": "2.2.2"
   }
 }
