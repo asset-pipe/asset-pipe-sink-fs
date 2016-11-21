@@ -26,8 +26,14 @@
   "bugs": {
     "url": "https://github.com/asset-pipe/asset-pipe-sink-fs/issues"
   },
-  "licenses": ["MIT"],
+  "license": "MIT",
   "dependencies": {
     "readable-stream": "2.2.2"
+  },
+  "devDependencies": {
+    "tap": "8.0.1"
+  },
+  "scripts": {
+    "test": "tap test/*.js"
   }
 }
