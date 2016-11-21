@@ -28,7 +28,9 @@
   },
   "license": "MIT",
   "dependencies": {
-    "readable-stream": "2.2.2"
+    "asset-pipe-common": "1.0.0-alpha.1",
+    "readable-stream": "2.2.2",
+    "JSONStream": "1.2.1"
   },
   "devDependencies": {
     "tap": "8.0.1"

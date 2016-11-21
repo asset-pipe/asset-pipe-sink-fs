@@ -1,9 +1,9 @@
 "use strict";
 
 const stream = require('stream');
-// const concat = require('concat-stream');
-const Mid = require('../');
+const Sink = require('../');
 const tap = require('tap');
+const fs = require('fs');
 
 
 
@@ -25,5 +25,11 @@ const b = ['d', 'a','b','c'];
 
 
 tap.test('not a real test', (t) => {
-    t.end();
+    const sink = new Sink('./');
+    const file = fs.createReadStream('./test/mock/feed.a.json');
+    const dest = sink.writer('json', (filename) => {
+        console.log(filename);
+        t.end();
+    });
+    file.pipe(dest);
 });
