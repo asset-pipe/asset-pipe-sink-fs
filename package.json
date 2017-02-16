@@ -26,7 +26,7 @@
   "license": "MIT",
   "dependencies": {
     "JSONStream": "1.2.1",
-    "asset-pipe-common": "1.0.0-alpha.2",
+    "asset-pipe-common": "1.0.0-alpha.4",
     "readable-stream": "2.2.2"
   },
   "devDependencies": {
