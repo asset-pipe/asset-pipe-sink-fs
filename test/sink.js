@@ -1,6 +1,5 @@
-"use strict";
+'use strict';
 
-const stream = require('stream');
 const Sink = require('../');
 const tap = require('tap');
 const fs = require('fs');

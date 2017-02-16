@@ -20,22 +20,25 @@
       "email": "post@trygve-lie.com"
     }
   ],
-  "engines": {
-    "node" : "6.x"
-  },
   "bugs": {
     "url": "https://github.com/asset-pipe/asset-pipe-sink-fs/issues"
   },
   "license": "MIT",
   "dependencies": {
+    "JSONStream": "1.2.1",
     "asset-pipe-common": "1.0.0-alpha.2",
-    "readable-stream": "2.2.2",
-    "JSONStream": "1.2.1"
+    "readable-stream": "2.2.2"
   },
   "devDependencies": {
+    "eslint": "^3.15.0",
+    "eslint-config-finn": "^1.0.1",
     "tap": "10.0.2"
   },
   "scripts": {
+    "lint": "eslint .",
     "test": "tap test/*.js"
-  }
+  },
+  "files": [
+    "lib"
+  ]
 }
