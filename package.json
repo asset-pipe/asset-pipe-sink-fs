@@ -27,7 +27,7 @@
   "dependencies": {
     "JSONStream": "1.3.1",
     "asset-pipe-common": "1.0.0-alpha.4",
-    "readable-stream": "2.2.3"
+    "readable-stream": "2.2.4"
   },
   "devDependencies": {
     "eslint": "^3.15.0",
