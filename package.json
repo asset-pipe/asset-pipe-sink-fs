@@ -36,7 +36,7 @@
   },
   "scripts": {
     "lint": "eslint .",
-    "test": "tap test/*.js"
+    "test": "tap --jobs=4 test/*.js"
   },
   "files": [
     "lib"
