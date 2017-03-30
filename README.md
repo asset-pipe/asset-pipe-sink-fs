@@ -55,15 +55,36 @@ This module have the following API:
 
 Supported arguments are:
 
- * `options` - Object - .
- * `type` - String - .
+ - `options.path` - String - path to where files whould be / are persisted.
 
 
-### writer()
+### writer(type)
 
+Method for writing a file to disc. Returns a write stream.
+
+Supported arguments are:
+
+ - `type` - String - File type of the file to write. Used as extension of the persisted file. - Required
+
+Events:
+
+ - `file saved` - When a file have been sucessfully persisted.
+ - `file not saved` -  When a file could not be persisted.
+ - `error` -  When an error occured during persistence.
 
 
 ### reader()
+
+Method for reading a file from disc. Returns a read stream.
+
+Supported arguments are:
+
+ - `file` - String - File name of the file to read.  - Required
+
+Events:
+
+ - `file found` - When the file we want to read is found.
+ - `file not saved` -  When the file we want to read is not found.
 
 
 
