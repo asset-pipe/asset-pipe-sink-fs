@@ -51,7 +51,7 @@ app.listen(8000);
 
 This module have the following API:
 
-### constructor(options, type)
+### constructor(options)
 
 Supported arguments are:
 
@@ -114,12 +114,5 @@ THE SOFTWARE.
 
 
 
-[commonjs]: https://nodejs.org/docs/latest/api/modules.html
 [asset-pipe]: https://github.com/asset-pipe
 [asset-pipe-build-server]: https://github.com/asset-pipe/asset-pipe-build-server
-
-[browserify]: https://github.com/substack/node-browserify
-[browserify-opts]: https://github.com/substack/node-browserify#browserifyfiles--opts
-[browserify-plugin]: https://github.com/substack/node-browserify#bpluginplugin-opts
-[browserify-transform]: https://github.com/substack/node-browserify#btransformtr-opts
-[asset-pipe-js-reader]: https://github.com/asset-pipe/asset-pipe-js-reader
