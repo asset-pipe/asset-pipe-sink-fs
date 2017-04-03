@@ -20,7 +20,7 @@ $ npm install asset-pipe-sink-fs
 
 ## Example
 
-Read an asset pipe feed from disc and serve it on http:
+Read an asset feed from disc and serve it on http:
 
 ```js
 const express = require('express');
