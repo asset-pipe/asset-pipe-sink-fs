@@ -73,7 +73,7 @@ Events:
  - `error` -  When an error occured during persistence.
 
 
-### reader()
+### reader(file)
 
 Method for reading a file from disc. Returns a read stream.
 
