@@ -68,9 +68,9 @@ Supported arguments are:
 
 Events:
 
- - `file saved` - When a file have been sucessfully persisted.
- - `file not saved` -  When a file could not be persisted.
- - `error` -  When an error occured during persistence.
+ - `file saved` - When a file have been sucessfully persisted. Emits with: `id` and `file`.
+ - `file not saved` -  When a file could not be persisted. Emits with: `error`.
+ - `error` -  When an error occured during persistence. Emits with: `error`.
 
 
 ### reader(file)
@@ -84,7 +84,7 @@ Supported arguments are:
 Events:
 
  - `file found` - When the file we want to read is found.
- - `file not saved` -  When the file we want to read is not found.
+ - `file not saved` -  When the file we want to read is not found. Emits with: `error`.
 
 
 
