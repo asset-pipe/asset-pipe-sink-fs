@@ -94,6 +94,17 @@ tap.test('.reader() - read non-existing file - should emit "file not found" even
     });
 });
 
+tap.test('.reader() - read non-existing file - should have filename as first argument in event', (t) => {
+    const sink = new Sink({
+        path: './test/mock/',
+    });
+    const source = sink.reader('feed.b.json');
+    source.on('file not found', (file) => {
+        t.equal(file, 'feed.b.json');
+        t.end();
+    });
+});
+
 tap.test('.reader() - read non-existing file - should emit (inherited) "error" event', (t) => {
     const sink = new Sink({
         path: './test/mock/',
@@ -115,6 +126,18 @@ tap.test('.reader() - read existing file - should emit "file found" event', (t) 
         t.end();
     });
 });
+
+tap.test('.reader() - read existing file - should have filename as first argument in event', (t) => {
+    const sink = new Sink({
+        path: './test/mock/',
+    });
+    const source = sink.reader('feed.a.json');
+    source.on('file found', (file) => {
+        t.equal(file, 'feed.a.json');
+        t.end();
+    });
+});
+
 
 tap.test('.reader() - read existing file - should emit (inherited) "open" event', (t) => {
     const sink = new Sink({
