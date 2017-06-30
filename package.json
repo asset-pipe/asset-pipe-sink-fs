@@ -30,7 +30,7 @@
     "readable-stream": "2.3.3"
   },
   "devDependencies": {
-    "eslint": "^3.12.2",
+    "eslint": "^4.1.1",
     "eslint-config-finn": "^2.0.0",
     "tap": "10.7.0"
   },
