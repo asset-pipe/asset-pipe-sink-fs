@@ -81,11 +81,11 @@ Async method for reading a file from storage
 
 ### set(fileName: string, fileContent: string): Promise<void>
 
-Async method for writing file to storage
+Async method for writing a file to storage
 
 ### has(fileName: string): Promise<Boolean>
 
-Async method for checking if file exist in storage
+Async method for checking if a file exists in storage
 
 
 ### writer(type)

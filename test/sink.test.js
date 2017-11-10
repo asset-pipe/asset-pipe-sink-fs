@@ -128,7 +128,9 @@ test('.reader() - no value for "file" argument - should throw', () => {
     });
     expect(() => {
         sink.reader();
-    }).toThrowError('"fileName" is missing');
+    }).toThrowError(
+        'Expected "fileName" to be a string. Instead got undefined'
+    );
 });
 
 test('.reader() - read non-existing file - should emit "file not found" event', done => {
