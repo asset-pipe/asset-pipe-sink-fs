@@ -1,6 +1,6 @@
 {
   "name": "@asset-pipe/sink-fs",
-  "version": "0.0.0-development",
+  "version": "1.0.0",
   "author": "Trygve Lie <post@trygve-lie.com>",
   "description": "Sink for persisting to and reading from the local file system",
   "main": "./lib/sink.js",
