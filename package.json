@@ -1,6 +1,6 @@
 {
   "name": "@asset-pipe/sink-fs",
-  "version": "1.0.0",
+  "version": "0.0.0-development",
   "author": "Trygve Lie <post@trygve-lie.com>",
   "description": "Sink for persisting to and reading from the local file system",
   "main": "./lib/sink.js",
@@ -15,7 +15,8 @@
     "Trygve Lie <post@trygve-lie.com>",
     "Trygve Lie (http://www.trygve-lie.com/)",
     "Greenkeeper (http://greenkeeper.io/)",
-    "Sveinung Røsaker (https://github.com/sveisvei)"
+    "Sveinung Røsaker (https://github.com/sveisvei)",
+    "Richard Walker (https://github.com/digitalsadhu)"
   ],
   "bugs": {
     "url": "https://github.com/asset-pipe/asset-pipe-sink-fs/issues"
@@ -40,7 +41,8 @@
     "lint-staged": "^4.3.0",
     "prettier": "^1.8.2",
     "projectz": "^1.4.0",
-    "tap": "10.7.0"
+    "tap": "10.7.0",
+    "semantic-release": "^8.2.0"
   },
   "scripts": {
     "lint": "eslint .",
@@ -48,7 +50,8 @@
     "lint:format": "eslint --fix .",
     "precommit": "lint-staged",
     "cm": "git-cz",
-    "readme": "projectz compile"
+    "readme": "projectz compile",
+    "semantic-release": "semantic-release pre && npm publish && semantic-release post"
   },
   "files": [
     "lib"
