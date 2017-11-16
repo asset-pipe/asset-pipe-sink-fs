@@ -46,6 +46,12 @@ test('.set() - should set value', async () => {
     expect(await sink.get('some-key-1')).toBe('value-1');
 });
 
+test('.set() - should set a deep folder', async () => {
+    const sink = getFreshSink('set-deep-1');
+    await sink.set('folder/folder/some-key-1', 'value-1');
+    expect(await sink.get('folder/folder/some-key-1')).toBe('value-1');
+});
+
 test('.set() - should not set value if missing value', async () => {
     expect.assertions(2);
     const sink = getFreshSink('set-2');
@@ -83,6 +89,30 @@ test('.writer() - no value for "type" argument - should throw', () => {
     expect(() => {
         sink.writer();
     }).toThrowError('"type" is missing');
+});
+
+test('dir() - should fetch file in root directory', async () => {
+    const sink = new Sink({ path: './test/mock' });
+    const directoryContent = await sink.dir('/');
+    expect(directoryContent).toHaveLength(1);
+    expect(directoryContent[0].fileName).toMatchSnapshot();
+    expect(directoryContent[0].content.length).toMatchSnapshot();
+});
+
+test('dir() - should fetch all files in sub directory', async () => {
+    const sink = new Sink({ path: './test/mock/' });
+    const directoryContent = await sink.dir('/sub');
+    expect(directoryContent).toMatchSnapshot();
+});
+
+test('dir() - should error when directory is missing', async () => {
+    expect.assertions(1);
+    const sink = new Sink({ path: './test/mock/' });
+    try {
+        await sink.dir('/missing');
+    } catch (e) {
+        expect(e.message).toMatchSnapshot();
+    }
 });
 
 test('.writer() - save to non existing path - should emit "file not saved" event', done => {
@@ -213,7 +243,7 @@ test('.reader() - read existing file - should emit (inherited) "open" event', do
 });
 
 test('.reader() - read existing file - should stream read file', done => {
-    expect.assertions(1);
+    expect.assertions(2);
     const dest = new stream.Writable({
         _data: false,
         write(chunk, encoding, next) {
@@ -227,12 +257,13 @@ test('.reader() - read existing file - should stream read file', done => {
     });
     const source = sink.reader('feed.a.json');
 
-    source.on('file found', () => {
+    source.on('file found', file => {
         source.pipe(dest);
+        expect(file).toMatchSnapshot();
     });
 
     dest.on('finish', () => {
-        expect(dest._data).toMatchSnapshot();
+        expect(dest._data.length).toMatchSnapshot();
         done();
     });
 });
