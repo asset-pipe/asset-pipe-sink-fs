@@ -87,6 +87,10 @@ Async method for writing a file to storage
 
 Async method for checking if a file exists in storage
 
+### dir(directoryName: string): Promise<Array>
+
+Async method for getting all files in a given directory
+
 
 ### writer(type)
 
