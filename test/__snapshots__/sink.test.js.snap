@@ -4,12 +4,6 @@ exports[`.reader() - read existing file - should stream read file 1`] = `"feed.a
 
 exports[`.reader() - read existing file - should stream read file 2`] = `661328`;
 
-exports[`.set() - should not set value if missing value 1`] = `[AssertionError [ERR_ASSERTION]: "fileContent" is missing]`;
-
-exports[`.set() - should not set value if missing value 2`] = `[Error: No file could be located with name "some-key-1". ENOENT: no such file or directory, open '/var/folders/bn/3rfyg5tn14sgpvl5jh92l709fmg1vs/T/set-2-rand-26603/some-key-1']`;
-
-exports[`.set() - should set value 1`] = `[Error: No file could be located with name "some-key". ENOENT: no such file or directory, open '/var/folders/bn/3rfyg5tn14sgpvl5jh92l709fmg1vs/T/get-1-rand-73788/some-key']`;
-
 exports[`.writer() - on "file saved" - should have "id" and "file" on emitted event 1`] = `"07a109ac983bc28d7f393215ca409e2d759e1fda9dc034e48338a5ef1aa92d6c"`;
 
 exports[`.writer() - on "file saved" - should have "id" and "file" on emitted event 2`] = `"07a109ac983bc28d7f393215ca409e2d759e1fda9dc034e48338a5ef1aa92d6c.json"`;

@@ -36,7 +36,12 @@ test('constructor() - has value for "options.path" argument - should be of Sink 
 
 test('.get() - non value should error', async () => {
     const sink = getFreshSink('get-1');
-    expect(sink.get('some-key')).rejects.toMatchSnapshot();
+    try {
+        await sink.get('some-key');
+    } catch (err) {
+        expect(err.message).toMatch(/No file could be located with name/);
+        expect(err.message).toMatch(/ENOENT: no such file or directory/);
+    }
 });
 
 test('.set() - should set value', async () => {
@@ -53,19 +58,20 @@ test('.set() - should set a deep folder', async () => {
 });
 
 test('.set() - should not set value if missing value', async () => {
-    expect.assertions(2);
+    expect.assertions(3);
     const sink = getFreshSink('set-2');
 
     try {
         await sink.set('some-key-1');
     } catch (e) {
-        expect(e).toMatchSnapshot();
+        expect(e.message).toMatch(/"fileContent" is missing/);
     }
 
     try {
         await sink.get('some-key-1');
     } catch (e) {
-        expect(e).toMatchSnapshot();
+        expect(e.message).toMatch(/No file could be located with name/);
+        expect(e.message).toMatch(/ENOENT: no such file or directory/);
     }
 });
 
