@@ -31,7 +31,7 @@
     "asset-pipe-common": "1.0.0",
     "boom": "^7.3.0",
     "mkdirp": "^0.5.1",
-    "readable-stream": "^3.1.0"
+    "readable-stream": "^3.6.0"
   },
   "devDependencies": {
     "commitizen": "^3.0.5",
